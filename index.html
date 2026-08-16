@@ -6,15 +6,15 @@
 <title>Fútbol Friends</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#000;color:#fff;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-.app{max-width:640px;margin:auto;min-height:100vh;background:#071008;padding-bottom:90px}
-header{height:70px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #293329}.logo{font-weight:800;font-size:21px}.g{color:#35f03d}
-main{padding:24px}h1{font-size:34px;margin:0 0 7px}h2{font-size:23px;margin:0 0 16px}.sub{color:#9da79e;margin-bottom:18px}.card{background:#0d150e;border:1px solid #29362b;border-radius:22px;padding:20px;margin:14px 0}
+.app{max-width:640px;margin:auto;min-height:100vh;background:#071008;padding-bottom:88px}
+header{height:70px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #293329}.logo{font-size:21px;font-weight:800}.g{color:#35f03d}
+main{padding:24px}h1{font-size:34px;margin:0 0 7px}h2{font-size:23px;margin:0 0 16px}.sub,.small{color:#9da79e}.card{background:#0d150e;border:1px solid #29362b;border-radius:22px;padding:20px;margin:14px 0}
 button{width:100%;padding:15px;border:0;border-radius:14px;background:#35f03d;color:#001000;font-weight:800;font-size:17px;margin-top:12px}.dark{background:#182119;color:#fff;border:1px solid #334034}
-.balance{font-size:42px;font-weight:900}.coin{color:#35f03d}.row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #293329}.row:last-child{border:0}
-.small{color:#9da79e;font-size:14px}.hide{display:none}nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(640px,100%);height:85px;background:#071008;border-top:1px solid #293329;display:grid;grid-template-columns:repeat(5,1fr);z-index:5}
-nav button{margin:0;background:none;color:#929c93;border-radius:0;font-size:12px;padding:7px}.active{color:#35f03d!important}.icon{font-size:22px;display:block;margin-bottom:3px}
-input{width:100%;padding:14px;border-radius:12px;border:1px solid #344034;background:#101810;color:white;font-size:17px;margin:8px 0}
-.line{padding:12px 0;border-bottom:1px solid #293329}.line b{display:block}.admin{border-color:#35f03d}
+.balance{font-size:40px;font-weight:900}.coin,.pts{color:#35f03d}.row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #293329}.row:last-child{border:0}
+.line{padding:12px 0;border-bottom:1px solid #293329}.line:last-child{border:0}.line b{display:block}.hide{display:none}
+input{width:100%;padding:14px;border-radius:12px;border:1px solid #344034;background:#101810;color:#fff;font-size:17px;margin:7px 0}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(640px,100%);height:85px;background:#071008;border-top:1px solid #293329;display:grid;grid-template-columns:repeat(5,1fr)}
+nav button{margin:0;background:none;color:#929c93;border-radius:0;font-size:12px;padding:7px}.active{color:#35f03d!important}.icon{font-size:22px;display:block}
 </style>
 </head>
 <body>
@@ -22,13 +22,13 @@ input{width:100%;padding:14px;border-radius:12px;border:1px solid #344034;backgr
 <header><div class="logo">⚽ FÚTBOL <span class="g">FRIENDS</span></div><div>🔔</div></header>
 <main>
 <section id="inicio">
-<h1>Hola, BOB 👋</h1><div class="sub">Tu equipo · Liga de Amigos</div>
-<div class="card"><h2>🪙 Mis monedas</h2><div class="balance"><span id="coins">1000</span> <span class="coin">🪙</span></div><div class="small">Monedas virtuales del juego</div><button onclick="show('tienda')">Ir a la tienda</button></div>
-<div class="card"><h2>🏆 Tu equipo</h2><div class="small">4-3-3 · Capitán: Rodri 👑</div><button class="dark" onclick="show('equipo')">Ver alineación</button></div>
+<h1>Hola, BOB 👋</h1><div class="sub">Liga de Amigos · Formación 4-3-3</div>
+<div class="card"><h2>🪙 Mis monedas</h2><div class="balance"><span id="coins">1000</span> <span class="coin">🪙</span></div><div class="small">Monedas virtuales</div><button onclick="show('tienda')">🛒 Ir a la tienda</button></div>
+<div class="card"><h2>🏆 Tu equipo</h2><div class="small">Rodri es tu capitán 👑</div><button class="dark" onclick="show('equipo')">Ver alineación</button></div>
 </section>
 
 <section id="equipo" class="hide">
-<h1>Mi equipo ⚽</h1><div class="sub">BOB · Formación 4-3-3</div>
+<h1>Mi equipo ⚽</h1><div class="sub">BOB · 4-3-3 · Alineación gratis</div>
 <div class="card">
 <div class="line">🧤 <b>Courtois</b><span class="small">Portero</span></div>
 <div class="line">🛡️ <b>Alexander-Arnold</b><span class="small">Defensa</span></div>
@@ -44,22 +44,29 @@ input{width:100%;padding:14px;border-radius:12px;border:1px solid #344034;backgr
 </div>
 </section>
 
-<section id="liga" class="hide"><h1>Liga 🏆</h1><div class="sub">Liga de Amigos</div><div class="card">
-<div class="row"><b>1.º Ana</b><b>1.421</b></div><div class="row"><b>2.º BOB</b><b>1.367</b></div><div class="row"><b>3.º Luis</b><b>1.302</b></div></div></section>
+<section id="liga" class="hide">
+<h1>Liga 🏆</h1><div class="sub">Liga de Amigos</div>
+<div class="card"><div class="row"><b>BOB</b><b class="pts">1.367 puntos</b></div><div class="small">Tu liga está lista para añadir amigos.</div></div>
+<div class="card"><h2>👥 Tus amigos</h2><div class="small">Todavía no tienes amigos añadidos.</div><button onclick="addFriend()">➕ Añadir amigo</button></div>
+</section>
+
+<section id="directo" class="hide">
+<h1>Directo ⚡</h1><div class="sub">Eventos de fútbol</div>
+<div class="card"><div class="row"><b>Rodri 👑 · Gol</b><b class="pts">+8</b></div><div class="row"><b>Olise · Asistencia</b><b class="pts">+3</b></div></div>
+</section>
 
 <section id="tienda" class="hide">
 <h1>Tienda 🛒</h1><div class="sub">Monedas virtuales</div>
 <div class="card"><h2>Tu saldo</h2><div class="balance"><span id="coins2">1000</span> <span class="coin">🪙</span></div></div>
-<div class="card"><h2>👑 Panel BOB</h2><div class="small">Solo para el administrador. En esta demo las monedas se guardan en este dispositivo.</div>
+<div class="card"><h2>👑 Panel BOB</h2><div class="small">Prototipo local. El código no debe considerarse seguro hasta conectar un servidor.</div>
 <input id="amount" type="number" min="1" placeholder="Cantidad de monedas">
 <input id="code" type="password" inputmode="numeric" maxlength="4" placeholder="Código de administrador">
-<button onclick="addCoins()">Añadir monedas</button><div id="msg" class="small"></div>
-</div>
-<div class="card"><h2>🎁 Código para amigos</h2><div class="small">Los códigos para amigos se conectarán al servidor cuando añadamos las cuentas online.</div><button class="dark" onclick="alert('Esta función se conectará al servidor en la próxima versión.')">Crear código</button></div>
+<button onclick="addCoins()">➕ Añadir monedas</button>
+<button class="dark" onclick="removeCoins()">➖ Quitar monedas</button>
+<div id="msg" class="small"></div></div>
 </section>
-
-<section id="directo" class="hide"><h1>Directo ⚡</h1><div class="sub">Eventos de fútbol</div><div class="card"><div class="row"><b>Rodri 👑 · Gol</b><b class="coin">+8</b></div><div class="row"><b>Olise · Asistencia</b><b class="coin">+3</b></div></div></section>
 </main>
+
 <nav>
 <button id="n-inicio" class="active" onclick="show('inicio')"><span class="icon">⌂</span>Inicio</button>
 <button id="n-equipo" onclick="show('equipo')"><span class="icon">♟</span>Mi equipo</button>
@@ -71,14 +78,13 @@ input{width:100%;padding:14px;border-radius:12px;border:1px solid #344034;backgr
 <script>
 let coins=Number(localStorage.getItem('ff_coins')||1000);
 function sync(){document.querySelectorAll('#coins,#coins2').forEach(x=>x.textContent=coins);localStorage.setItem('ff_coins',coins)}
-function addCoins(){
- const code=document.getElementById('code').value, amount=Number(document.getElementById('amount').value), msg=document.getElementById('msg');
- if(code!=='4826'){msg.textContent='Código incorrecto.';return}
- if(!amount||amount<1){msg.textContent='Introduce una cantidad válida.';return}
- coins+=amount;sync();msg.textContent='¡Añadidas '+amount.toLocaleString('es-ES')+' 🪙!';
- document.getElementById('amount').value='';document.getElementById('code').value='';
-}
-function show(id){document.querySelectorAll('main section').forEach(x=>x.classList.add('hide'));document.getElementById(id).classList.remove('hide');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));let b=document.getElementById('n-'+id);if(b)b.classList.add('active');scrollTo(0,0);sync()}
+function adminAmount(){return Number(document.getElementById('amount').value)}
+function valid(){return document.getElementById('code').value==='4826'}
+function addCoins(){let n=adminAmount(),m=document.getElementById('msg');if(!valid()){m.textContent='Código incorrecto.';return}if(n<1){m.textContent='Introduce una cantidad válida.';return}coins+=n;sync();m.textContent='Añadidas '+n+' monedas.'}
+function removeCoins(){let n=adminAmount(),m=document.getElementById('msg');if(!valid()){m.textContent='Código incorrecto.';return}if(n<1){m.textContent='Introduce una cantidad válida.';return}coins=Math.max(0,coins-n);sync();m.textContent='Quitadas '+n+' monedas.'}
+function addFriend(){alert('El sistema de amigos se conectará al servidor en la próxima versión. Tus amigos no necesitarán GitHub.')}
+function show(id){document.querySelectorAll('main section').forEach(x=>x.classList.add('hide'));document.getElementById(id).classList.remove('hide');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));document.getElementById('n-'+id).classList.add('active');scrollTo(0,0);sync()}
 sync();
 </script>
-</body></html>
+</body>
+</html>
